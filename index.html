@@ -190,6 +190,30 @@
   }
   .why-cheap b{color:#fff}
 
+  /* tariffs */
+  .tariffs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;align-items:stretch}
+  .tier{background:var(--paper);border-radius:22px;padding:30px 26px;border:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+  .tier-best{background:#fff;border:2px solid transparent;background-image:linear-gradient(#fff,#fff),var(--grad);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:0 24px 60px -28px rgba(255,46,126,.55);transform:translateY(-12px)}
+  .tier-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--grad);color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:7px 18px;border-radius:30px}
+  .tier-badge-dark{background:var(--ink)}
+  .tier-name{font-family:'Unbounded';font-weight:800;font-size:20px;color:var(--ink)}
+  .tier-price{font-family:'Unbounded';font-weight:800;font-size:42px;color:var(--ink);margin:10px 0 2px;line-height:1}
+  .tier-price span{font-size:.5em;color:var(--muted)}
+  .tier-sub{color:var(--muted);font-size:14.5px;margin-bottom:20px;min-height:40px}
+  .tier-list{list-style:none;flex:1;margin-bottom:24px}
+  .tier-list li{padding:9px 0 9px 28px;position:relative;font-size:14.5px;line-height:1.4;color:var(--ink);border-bottom:1px solid var(--line)}
+  .tier-list li:last-child{border-bottom:none}
+  .tier-list li::before{content:"✓";position:absolute;left:0;top:9px;color:var(--coral);font-weight:800}
+  .tier-list li.muted-li{color:var(--muted)}
+  .tier-list li.muted-li::before{content:"–";color:var(--muted)}
+  .tier-list li b{font-weight:700}
+  .tier .btn{width:100%;font-size:15px;padding:15px 20px}
+  @media(max-width:760px){
+    .tariffs{grid-template-columns:1fr;gap:24px}
+    .tier-best{transform:none}
+    .tier-sub{min-height:0}
+  }
+
   /* AUTHOR + reviews placeholders */
   .author{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:center;margin-top:34px}
   .author-photo{
@@ -258,8 +282,7 @@
     <h1>Перезапуск<br>блога <span class="grad-text">за 7 дней</span></h1>
     <p class="sub">Блог, который наконец-то <b>приводит клиентов</b>. Не ещё один курс в закладки — а 7 дней целевых действий с заданиями и обратной связью. За неделю ты сделаешь больше, чем за последние месяцы.</p>
     <div class="hero-cta">
-      <a href="https://t.me/matsukova_kristina" class="btn js-buy">Забрать место <span class="price">490 ₽</span></a>
-      <a href="#how" class="btn btn-ghost">Как это устроено</a>
+      <a href="#join" class="btn">Выбрать тариф <span class="price">от 490 ₽</span></a>
     </div>
     <div class="trust">
       <span>ежедневные задания</span>
@@ -314,7 +337,7 @@
     </div>
     <div class="reframe">
       <p class="big">Проблема не в знаниях.<br>Проблема — в системе действий и&nbsp;внедрении.</p>
-      <a href="https://t.me/matsukova_kristina" class="btn js-buy">Хочу систему</a>
+      <a href="#join" class="btn">Хочу систему</a>
     </div>
   </div>
 </section>
@@ -419,27 +442,53 @@
 <!-- OFFER -->
 <section class="offer reveal" id="join">
   <div class="wrap">
-    <div class="label">Вход в систему</div>
-    <h2 class="h-sec" style="max-width:760px">7 дней, чтобы сделать больше, чем за последний год</h2>
-    <div class="price-box">
-      <div>
-        <ul class="stack">
-          <li>База знаний по теме каждого дня — коротко и по делу, без воды</li>
-          <li>7 пошаговых заданий: упаковка профиля, оффер, система контента</li>
-          <li>Разбор, какие посты, рилс и сторис ведут человека к заявке</li>
-          <li>Связка Instagram + Telegram + Threads под твою нишу</li>
-          <li>Личная обратная связь и корректировки по твоему блогу</li>
-          <li>Готовый контент-план и понятный следующий шаг после 7 дней</li>
+    <div class="label">Выбери формат</div>
+    <h2 class="h-sec" style="max-width:760px">Три варианта — от «сделаю сам» до «сделаем вместе»</h2>
+    <div class="tariffs">
+
+      <div class="tier">
+        <div class="tier-name">Сам</div>
+        <div class="tier-price">490 <span>₽</span></div>
+        <div class="tier-sub">Перезапуск своими руками</div>
+        <ul class="tier-list">
+          <li>База знаний на 7 дней</li>
+          <li>7 заданий с внедрением</li>
+          <li>Связка Instagram + Telegram + Threads</li>
+          <li>Материалы и чат челленджа</li>
+          <li class="muted-li">Без личной проверки заданий</li>
         </ul>
+        <a href="https://t.me/matsukova_kristina" class="btn btn-ghost js-buy">Забрать «Сам»</a>
       </div>
-      <div class="price-card">
-        <div class="old">2 990 ₽</div>
-        <div class="now"><span class="cur">₽</span>490</div>
-        <div class="note">единоразово · доступ сразу</div>
-        <a href="https://t.me/matsukova_kristina" class="btn js-buy">Забрать место</a>
-        <div class="deadline">⚡ Старт 6 июля — набор закроется до старта</div>
+
+      <div class="tier tier-best">
+        <div class="tier-badge">Выбор большинства</div>
+        <div class="tier-name">С поддержкой</div>
+        <div class="tier-price">1290 <span>₽</span></div>
+        <div class="tier-sub">Делаешь правильно — с корректировками</div>
+        <ul class="tier-list">
+          <li>Всё из тарифа «Сам»</li>
+          <li><b>Личная обратная связь на каждое задание</b></li>
+          <li><b>Личный разбор профиля</b>: шапка, оффер, позиционирование — что менять, чтобы приходили клиенты</li>
+          <li>Ответы на вопросы весь челлендж</li>
+        </ul>
+        <a href="https://t.me/matsukova_kristina" class="btn js-buy">Забрать «С поддержкой»</a>
       </div>
+
+      <div class="tier">
+        <div class="tier-badge tier-badge-dark">Мест мало</div>
+        <div class="tier-name">Под ключ</div>
+        <div class="tier-price">5900 <span>₽</span></div>
+        <div class="tier-sub">Выходишь с готовой стратегией</div>
+        <ul class="tier-list">
+          <li>Всё из тарифа «С поддержкой»</li>
+          <li><b>Индивидуальная стратегия на личном созвоне</b>: система под твою нишу на месяцы вперёд — отдельно стоит 10 000 ₽</li>
+          <li><b>Личный чат со мной на месяц</b></li>
+        </ul>
+        <a href="https://t.me/matsukova_kristina" class="btn btn-ghost js-buy">Забрать «Под ключ»</a>
+      </div>
+
     </div>
+    <div class="deadline" style="text-align:center;margin-top:30px;color:#FF6A4D;font-weight:600">⚡ Старт 6 июля — набор закроется до старта</div>
   </div>
 </section>
 
@@ -503,8 +552,8 @@
 <section class="final reveal">
   <div class="wrap">
     <h2>Через неделю у тебя будет<br><span class="grad-text">блог, который работает</span></h2>
-    <p class="lead">Или ещё один месяц «постить и надеяться». Выбор за 490 ₽.</p>
-    <a href="https://t.me/matsukova_kristina" class="btn js-buy">Присоединиться к перезапуску <span class="price">490 ₽</span></a>
+    <p class="lead">Или ещё один месяц «постить и надеяться». Выбери формат — от 490 ₽.</p>
+    <a href="#join" class="btn">Выбрать тариф <span class="price">от 490 ₽</span></a>
     <div class="deadline">⚡ Старт 6 июля · набор закрывается до старта</div>
   </div>
 </section>
@@ -519,6 +568,19 @@
     es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // надёжная прокрутка к секциям по кнопкам-якорям
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        target.classList.add('in');
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
 </script>
 </body>
 </html>
